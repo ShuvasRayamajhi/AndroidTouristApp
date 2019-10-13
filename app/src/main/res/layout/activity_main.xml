@@ -72,4 +72,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tAttempt"
         app:layout_constraintVertical_bias="0.15" />
+
+    <TextView
+        android:id="@+id/tEnter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Your Details"
+        app:layout_constraintBottom_toTopOf="@+id/eUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.528" />
 </androidx.constraintlayout.widget.ConstraintLayout>
