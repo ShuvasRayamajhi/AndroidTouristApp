@@ -1,5 +1,5 @@
-package com.rayamajs.cwapp;
 
+package com.rayamajs.cwapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    //declaring variables
     private EditText User;
     private EditText Pass;
     private Button Log;
@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         Attempt.setText("Attempts left:  5");
         Restart = (Button) findViewById(R.id.bRestart);
 
-
         Log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,9 +46,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
-
 
     private void validation (String uName, String uPassword) {
         if ((uName.equals("admin")) && (uPassword.equals("123"))){
@@ -65,8 +62,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.setEnabled(false);
             }
         }
-
-
     }
-
 }
