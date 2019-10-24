@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/paper"
+    android:background="@drawable/register_background"
     android:orientation="vertical"
     android:padding="30dp"
     tools:context=".Sign_Form">
@@ -15,8 +15,6 @@
         android:focusable="true"
         android:focusableInTouchMode="true"
         android:layout_margin="6dp"
-
-        android:textColorHint="@color/colorAccent"
         >
 
         <EditText
@@ -34,8 +32,7 @@
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:layout_margin="6dp"
-        android:textColorHint="@color/colorAccent"
+        android:layout_margin="3dp"
         >
 
         <EditText
@@ -53,9 +50,7 @@
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:layout_margin="6dp"
-        android:textColorHint="@color/colorAccent"
-        >
+        android:layout_margin="3dp"        >
 
         <EditText
             android:layout_width="match_parent"
@@ -72,8 +67,8 @@
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:layout_margin="6dp"
-        android:textColorHint="@color/colorAccent"
+        app:passwordToggleEnabled="true"
+        android:layout_margin="3dp"
         >
 
         <EditText
@@ -91,7 +86,8 @@
         android:layout_height="wrap_content"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:layout_margin="6dp"
+        android:layout_margin="3dp"
+        app:passwordToggleEnabled="true"
         android:textColorHint="@color/colorAccent"
         >
 
@@ -138,7 +134,7 @@
         android:layout_height="60dp"
         android:text="Register"
         android:textSize="23sp"
-        android:layout_margin="6dp"
+        android:layout_margin="20dp"
         android:textColor="#ffffff"
         android:background="@drawable/rounded_button"
         />
