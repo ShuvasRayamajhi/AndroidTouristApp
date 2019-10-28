@@ -68,7 +68,7 @@ public class Sign_Form extends AppCompatActivity {
                     return;
 
                 }
-                
+
                 progressBar.setVisibility(View.VISIBLE);
 
                 if (password.equals(confirmPassword)) {
@@ -81,11 +81,12 @@ public class Sign_Form extends AppCompatActivity {
                                     progressBar.setVisibility(View.GONE);
 
                                     if (task.isSuccessful()) {
-                                        //startActivity(new Intent(getApplicationContext(), MemberPage.class));
+                                        //sign in successful
+                                        startActivity(new Intent(getApplicationContext(), MemberPage.class));
                                         Toast.makeText(Sign_Form.this, "Registered", Toast.LENGTH_SHORT).show();
 
                                     } else {
-
+                                        //sign in failed
                                         Toast.makeText(Sign_Form.this, "Failed to Authenticate", Toast.LENGTH_SHORT).show();
 
                                     }
