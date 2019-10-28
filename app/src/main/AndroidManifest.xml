@@ -16,9 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Sign_Form" />
+        <activity android:name=".Log_Form" />
         <activity android:name=".MemberPage" />
-        <activity android:name=".Log_Form">
+        <activity android:name=".Sign_Form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
