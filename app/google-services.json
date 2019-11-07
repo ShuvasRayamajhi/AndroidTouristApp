@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "89225038874",
+    "firebase_url": "https://cw-app-28184.firebaseio.com",
+    "project_id": "cw-app-28184",
+    "storage_bucket": "cw-app-28184.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89225038874:android:01963407147a7c51ff95a3",
+        "android_client_info": {
+          "package_name": "com.rayamajs.cwapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89225038874-64ccsa4v2kim7ms8u7gsaaiec3c87gjl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rayamajs.cwapp",
+            "certificate_hash": "62b77de45904ae7e08baea1641f2f5f3e431360f"
+          }
+        },
+        {
+          "client_id": "89225038874-26033sb2je76pgu6f02rj9ctijp52c19.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvsAgJpDZ7ewJQuGHN6HXy8Ht5rfeerlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89225038874-26033sb2je76pgu6f02rj9ctijp52c19.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

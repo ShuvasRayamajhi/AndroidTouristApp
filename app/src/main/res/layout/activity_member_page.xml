@@ -20,12 +20,12 @@
 
     <Button
         android:id="@+id/location_but"
-        android:layout_height="59dp"
-        android:layout_width="wrap_content"
-        android:text="Current Location"
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="#ffffff"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
         android:layout_margin="150dp"
-        android:textSize="12dp"
-        />
+        android:backgroundTint="@color/colorPrimary"
+        android:onClick="btnLocation"
+        android:text="Location"
+        android:textColor="#ffffff"
+        android:textSize="18dp" />
 </RelativeLayout>
