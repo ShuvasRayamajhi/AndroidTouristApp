@@ -2,10 +2,12 @@ package com.rayamajs.cwapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
+import android.widget.Toast;
 
 import java.util.Locale;
 
@@ -30,7 +32,12 @@ public class MemberPage extends AppCompatActivity {
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
                 "Say Something");
-        startActivityForResult(intent, 1);
+        try {
+            startActivityForResult(intent, 1);
+        } catch (ActivityNotFoundException e){
+            Toast.makeText(this, e.getMessage(),Toast.LENGTH_SHORT).show();
+        }
 
     }
+
 }
