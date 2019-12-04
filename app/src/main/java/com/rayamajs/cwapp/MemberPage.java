@@ -1,5 +1,6 @@
 package com.rayamajs.cwapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
@@ -7,16 +8,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
 
 public class MemberPage extends AppCompatActivity {
 
+    TextView outputText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_page);
+        outputText = (TextView) findViewById(R.id.txt_output);
     }
 
     public void btnLocation (View view) {
@@ -40,4 +45,16 @@ public class MemberPage extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case 1:
+                if (resultCode==RESULT_OK && null!= data) {
+                }
+                break;
+        }
+
+    }
 }
