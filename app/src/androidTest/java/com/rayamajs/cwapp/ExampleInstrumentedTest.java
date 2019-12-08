@@ -24,4 +24,8 @@ public class ExampleInstrumentedTest {
 
         assertEquals("com.rayamajs.cwapp", appContext.getPackageName());
     }
+
+
+
+
 }
