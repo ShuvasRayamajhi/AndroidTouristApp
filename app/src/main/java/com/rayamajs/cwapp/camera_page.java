@@ -1,8 +1,10 @@
 package com.rayamajs.cwapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.media.Image;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -33,5 +35,11 @@ public class camera_page extends AppCompatActivity {
        });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        Bitmap bitmap = (Bitmap)data.getExtras().get("data");
+        imageDisplay.setImageBitmap(bitmap);
+    }
 }
