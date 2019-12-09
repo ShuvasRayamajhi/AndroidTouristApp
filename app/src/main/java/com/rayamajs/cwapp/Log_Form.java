@@ -78,7 +78,6 @@ public class Log_Form extends AppCompatActivity {
     }
 
     public void btn_signForm(View view) {
-
         startActivity(new Intent(getApplicationContext(), Sign_Form.class));
     }
 }

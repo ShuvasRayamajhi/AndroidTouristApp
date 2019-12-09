@@ -1,33 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/maps_back"
+    android:background="@drawable/log_background"
     android:padding="30dp"
     android:orientation="horizontal"
     tools:context=".MemberPage">
 
-    <Button
-        android:id="@+id/log_btn"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/rounded_button"
-        android:text="Location"
-        android:onClick="btnLocation"
-        android:textColor="#ffffff"
-        android:textSize="15dp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:orientation="vertical"
+        >
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:text="User Page"
-        android:gravity="left"
+        android:text="Find Your Location"
+        android:gravity="center"
         android:backgroundTint="@color/colorPrimary"
         android:textColor="#161515"
-        android:layout_margin= "0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft= "00dp"
         />
-</RelativeLayout>
+
+    <Button
+        android:id="@+id/log_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft= "10dp"
+        android:background="@drawable/rounded_button"
+        android:text="Location"
+        android:onClick="btnLocation"
+        android:textColor="#ffffff"
+        android:textSize="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp"
+        android:orientation="vertical"
+        >
+    <TextView
+        android:id="@+id/txt_output"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:text="Speech to Text"
+        android:gravity="center"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#161515"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft= "50dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:text="Open Mic"
+        android:textSize="19sp"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft= "50dp"
+        android:onClick="btnSpeech"
+        />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:text="Speech to Text"
+            android:gravity="center"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="#161515"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft= "50dp"
+            />
+        <Button
+            android:id="@+id/camera_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft= "50dp"
+            android:background="@drawable/rounded_button"
+            android:onClick="btn_camera"
+            android:text="Camera"
+            android:textColor="#ffffff"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+</LinearLayout>
