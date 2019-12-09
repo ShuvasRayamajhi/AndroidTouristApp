@@ -28,7 +28,6 @@ public class Sign_Form extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign__form);
-
         getSupportActionBar().setTitle("Register (Test)");
 
         emailTxt = (EditText) findViewById(R.id.email_txt);
