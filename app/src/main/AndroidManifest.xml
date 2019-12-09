@@ -29,7 +29,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".photo_camera"></activity>
+        <activity android:name=".photo_camera"/>
+        <activity android:name=".DisplayImage" />
+        <activity android:name=".Log_Form" />
         <activity android:name=".camera_page" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -49,7 +51,7 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".Sign_Form" />
         <activity android:name=".MemberPage" />
-        <activity android:name=".Log_Form">
+        <activity android:name=".review">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
