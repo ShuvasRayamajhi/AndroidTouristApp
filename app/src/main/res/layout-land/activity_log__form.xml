@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:padding="30dp"
-    android:background="@drawable/log_background"
+    android:background="@drawable/register_background"
     tools:context=".Log_Form">
 
 

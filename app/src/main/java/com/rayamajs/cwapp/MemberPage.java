@@ -64,4 +64,8 @@ public class MemberPage extends AppCompatActivity {
 
         startActivity(new Intent(getApplicationContext(), camera_page.class));
     }
+
+    public void btn_review(View view) {
+        startActivity(new Intent(getApplicationContext(), review.class));
+    }
 }

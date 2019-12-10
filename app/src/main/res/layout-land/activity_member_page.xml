@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/log_background"
+    android:background="@drawable/register_background"
     android:padding="30dp"
     android:orientation="horizontal"
     tools:context=".MemberPage">
@@ -98,6 +98,38 @@
             android:text="Camera"
             android:textColor="#ffffff"
             android:textSize="23sp" />
+
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="0dp"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:text="Reviews"
+            android:gravity="center"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="#161515"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft= "50dp"
+            />
+        <Button
+            android:id="@+id/review_btn"
+            android:onClick="btn_review"
+            android:text="Reviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button"
+            android:textSize="23sp"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft= "50dp" />
+
+    </LinearLayout>
+
+
+
 
 </LinearLayout>

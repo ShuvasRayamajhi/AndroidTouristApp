@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/maps_back"
+    android:background="@drawable/register_background"
     android:padding="30dp"
     android:orientation="vertical"
     tools:context=".MemberPage">
@@ -46,6 +46,7 @@
         />
 
     <Button
+        android:id="@+id/speech_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
@@ -56,15 +57,26 @@
         android:onClick="btnSpeech"
         />
     <Button
-        android:id="@+id/register_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:background="@drawable/rounded_button"
+        android:id="@+id/camera_btn"
         android:onClick="btn_camera"
         android:text="Camera"
-        android:textColor="#ffffff"
-        android:textSize="23sp" />
-
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:layout_below="@+id/speech_btn"
+        android:textSize="19sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft= "10dp" />
+    <Button
+        android:id="@+id/review_btn"
+        android:onClick="btn_review"
+        android:text="Reviews"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:layout_below="@+id/camera_btn"
+        android:textSize="19sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft= "10dp" />
 
 </RelativeLayout>
