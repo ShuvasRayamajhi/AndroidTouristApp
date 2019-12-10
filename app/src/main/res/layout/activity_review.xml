@@ -11,7 +11,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTexName"
+        android:id="@+id/editPlaceName"
         android:layout_marginTop="50dp"
         android:ems="10"
         android:textSize="20sp"

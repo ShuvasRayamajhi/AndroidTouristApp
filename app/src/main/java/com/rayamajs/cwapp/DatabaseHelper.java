@@ -1,5 +1,6 @@
 package com.rayamajs.cwapp;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -33,5 +34,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public boolean insertData(String placename, String review, String rating) {
+        SQLiteDatabase db = this.getWritableDatabase(); //writing into the database
+        ContentValues contentValues = new ContentValues();//put values inside columns
+        contentValues.put(COL_2, placename);
+        contentValues.put(COL_3, review);
+        contentValues.put(COL_4, rating);
 
+        long success = db.insert(TABLE_NAME, null, contentValues); //insert the values that were put
+
+        if (success == -1){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 }
