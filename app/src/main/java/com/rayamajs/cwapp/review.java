@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class review extends AppCompatActivity {
 
@@ -30,6 +31,14 @@ public class review extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean isInserted =  myDb.insertData(text_PlaceName.getText().toString(), text_Review.getText().toString(), text_Rating.getText().toString()); //insert data from the xml fle
+                    if (isInserted == true) {
+                        Toast.makeText(review.this, "Review has been added", Toast.LENGTH_SHORT).show();
+
+                    }
+                    else {
+                        Toast.makeText(review.this, "Review failed to add", Toast.LENGTH_SHORT).show();
+
+                    }
 
             }
         });
