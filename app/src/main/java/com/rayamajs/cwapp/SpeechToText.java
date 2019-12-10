@@ -1,13 +1,11 @@
 package com.rayamajs.cwapp;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
-import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,16 +13,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Locale;
 
-public class Accessibility extends AppCompatActivity {
+public class SpeechToText extends AppCompatActivity {
     TextView outputText;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_accessibility);
+        setContentView(R.layout.activity_speech_to_text);
         outputText = (TextView) findViewById(R.id.txt_output);
     }
-
     public void btnSpeech(View view) {
 
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);

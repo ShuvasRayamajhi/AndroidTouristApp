@@ -27,13 +27,14 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Tourist"
+        android:label="Deaf People Assistant"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Accessibility"></activity>
+        <activity android:name=".TextToSpeech"></activity>
+        <activity android:name=".SpeechToText" />
+        <activity android:name=".Accessibility" />
         <activity android:name=".review" />
-
         <activity android:name=".MemberPage" />
         <activity android:name=".camera_page" />
         <!--
@@ -53,10 +54,11 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Sign_Form" />
-        <activity android:name=".Log_Form" >
+        <activity android:name=".Log_Form">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 

@@ -7,6 +7,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +23,7 @@ public class MemberPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_page);
-        outputText = (TextView) findViewById(R.id.txt_output);
+
     }
 
     public void btnLocation (View view) {
@@ -41,7 +42,11 @@ public class MemberPage extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), review.class));
     }
 
-    public void btnAccessbility(View view) {
-        startActivity(new Intent(getApplicationContext(), Accessibility.class));
+    public void btnSpeechToText(View view) {
+        startActivity(new Intent(getApplicationContext(), SpeechToText.class));
+    }
+
+    public void textToSpeech(View view) {
+        startActivity(new Intent(getApplicationContext(), com.rayamajs.cwapp.TextToSpeech.class));
     }
 }

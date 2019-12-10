@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_background"
+    tools:context=".TextToSpeech">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change your text to speech."
+        />
+
+    <EditText
+        android:id="@+id/speech_text"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:hint="Type some Message"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="50dp"
+        android:lines="8"
+        android:minLines="6"
+        android:foregroundGravity="top|left"
+        android:maxLines="10"
+        android:padding="3dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:background="@drawable/text_background"
+        android:textColor="#161515"
+
+        />
+
+    <Button
+        android:id="@+id/btn_speech"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:text="Speech"
+        android:textSize="19sp"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft= "10dp"
+
+        />
+
+</RelativeLayout>

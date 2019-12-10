@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/log_background"
+    android:background="@drawable/register_background"
     android:orientation="vertical"
     android:padding="4dp"
     tools:context=".camera_page">
 
     <ImageView
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="400dp"
         android:id="@+id/imageCapture"
         />
@@ -21,7 +21,7 @@
             android:text="Capture Image"
             android:textColor="@android:color/white"
             android:layout_marginTop="20dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/rounded_button"
             android:textSize="17dp"
             android:id="@+id/btn_captureImage"
             />
