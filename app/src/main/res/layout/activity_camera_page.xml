@@ -9,6 +9,13 @@
     android:padding="4dp"
     tools:context=".camera_page">
 
+    <TextView
+        android:id="@+id/tvMainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Camera Page"
+        />
+
     <ImageView
         android:layout_width="300dp"
         android:layout_height="400dp"

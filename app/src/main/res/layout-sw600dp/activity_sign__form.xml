@@ -8,12 +8,19 @@
     android:orientation="horizontal"
     android:padding="30dp"
     tools:context=".Sign_Form">
+    <TextView
+        android:id="@+id/tvMainText"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="Sign In Page"
+        />
+
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/log_icon"
-        android:padding="10dp"
+        android:padding="1dp"
 
         />
 
