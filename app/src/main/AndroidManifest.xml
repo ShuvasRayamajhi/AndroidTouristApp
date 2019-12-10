@@ -7,6 +7,8 @@
          location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature
         android:name="android.hardware.Camera"
@@ -29,10 +31,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CaptureUpload"></activity>
-        <activity android:name=".photo_camera" />
-        <activity android:name=".DisplayImage" />
-        <activity android:name=".Log_Form" />
+        <activity android:name=".Accessibility"></activity>
+        <activity android:name=".review" />
+
+        <activity android:name=".MemberPage" />
         <activity android:name=".camera_page" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -51,12 +53,10 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Sign_Form" />
-        <activity android:name=".MemberPage" />
-        <activity android:name=".review">
+        <activity android:name=".Log_Form" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
 
