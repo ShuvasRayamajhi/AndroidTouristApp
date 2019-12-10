@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,127 +9,84 @@
     android:orientation="horizontal"
     tools:context=".MemberPage">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:orientation="vertical"
-        >
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:text="Find Your Location"
-        android:gravity="center"
+        android:text="Member Page"
+        android:gravity="left"
         android:backgroundTint="@color/colorPrimary"
         android:textColor="#161515"
         android:layout_marginTop="1dp"
-        android:layout_marginLeft= "00dp"
-        />
 
+        />
+    <TextView
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Assist The Audio Impaired"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#161515"
+        android:textSize="10dp"
+
+        />
     <Button
         android:id="@+id/log_btn"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft= "10dp"
         android:background="@drawable/rounded_button"
         android:text="Location"
         android:onClick="btnLocation"
-        android:textColor="#ffffff"
-        android:textSize="15dp" />
-    </LinearLayout>
+        android:textSize="19sp" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="0dp"
-        android:orientation="vertical"
-        >
-    <TextView
-        android:id="@+id/txt_output"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:text="Speech to Text"
-        android:gravity="center"
-        android:backgroundTint="@color/colorPrimary"
-        android:textColor="#161515"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft= "50dp"
-        />
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/speech_btn"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button"
-        android:text="Open Mic"
+        android:text="Speech To Text"
         android:textSize="19sp"
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft= "50dp"
-        android:onClick="btnSpeech"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft= "220dp"
+        android:onClick="btnSpeechToText"
         />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/camera_btn"
+        android:onClick="btn_camera"
+        android:text="Camera"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:paddingTop="0dp"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:text="Speech to Text"
-            android:gravity="center"
-            android:backgroundTint="@color/colorPrimary"
-            android:textColor="#161515"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft= "50dp"
-            />
-        <Button
-            android:id="@+id/camera_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft= "50dp"
-            android:background="@drawable/rounded_button"
-            android:onClick="btn_camera"
-            android:text="Camera"
-            android:textColor="#ffffff"
-            android:textSize="23sp" />
+        android:background="@drawable/rounded_button"
+        android:layout_below="@+id/speech_btn"
+        android:textSize="19sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft= "10dp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <Button
+        android:onClick="textToSpeech"
+        android:text="Text To Speech"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:paddingTop="0dp"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="60dp"
-            android:text="Reviews"
-            android:gravity="center"
-            android:backgroundTint="@color/colorPrimary"
-            android:textColor="#161515"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft= "50dp"
-            />
-        <Button
-            android:id="@+id/review_btn"
-            android:onClick="btn_review"
-            android:text="Reviews"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/rounded_button"
-            android:textSize="23sp"
-            android:layout_marginTop="0dp"
-            android:layout_marginLeft= "50dp" />
+        android:background="@drawable/rounded_button"
+        android:textSize="19sp"
+        android:layout_below="@+id/speech_btn"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft= "220dp" />
+    <Button
+        android:id="@+id/review_btn"
+        android:onClick="btn_review"
+        android:text="Notes"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
 
-    </LinearLayout>
+        android:textSize="19sp"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="450" />
 
 
-
-
-</LinearLayout>
+</RelativeLayout>

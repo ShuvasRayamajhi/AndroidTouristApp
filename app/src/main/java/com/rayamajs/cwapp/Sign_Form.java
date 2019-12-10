@@ -41,7 +41,7 @@ public class Sign_Form extends AppCompatActivity {
         buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MemberPage.class));
+
                 String email = emailTxt.getText().toString().trim();
                 String password = passwordTxt.getText().toString().trim();
                 String confirmPassword = confirmTxt.getText().toString().trim();
@@ -82,7 +82,7 @@ public class Sign_Form extends AppCompatActivity {
 
                                     if (task.isSuccessful()) {
                                         //sign in successful
-
+                                        startActivity(new Intent(getApplicationContext(), MemberPage.class));
                                         Toast.makeText(Sign_Form.this, "Registered", Toast.LENGTH_SHORT).show();
 
                                     } else {
