@@ -23,13 +23,14 @@
 
     <EditText
         android:layout_width="400dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:id="@+id/editReview"
         android:layout_marginTop="150dp"
+        android:background="@drawable/text_background"
         android:ems="10"
         android:textSize="20sp"
         android:inputType="textLongMessage"
-        android:hint= "Review: "
+        android:hint= "  Review: "
         />
     <EditText
         android:layout_width="400dp"

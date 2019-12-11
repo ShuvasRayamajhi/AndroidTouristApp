@@ -18,8 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Log_Form extends AppCompatActivity {
 
-    EditText emailTxt, passwordTxt;
-    Button logBtn;
+    private EditText emailTxt, passwordTxt;
+    private Button logBtn;
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
 

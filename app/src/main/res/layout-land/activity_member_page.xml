@@ -46,7 +46,6 @@
         />
     <Button
         android:id="@+id/camera_btn"
-        android:onClick="btn_camera"
         android:text="Camera"
         android:layout_width="200dp"
         android:layout_height="wrap_content"

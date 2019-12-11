@@ -15,18 +15,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_2 = "PLACENAME";
     public static final String COL_3 = "REVIEW";
     public static final String COL_4 = "RATING";
+    public static final String TABLE_NAME2 = "notes_table";
+    public static final String COL2_1 = "ID";
+    public static final String COL2_2 = "NOTE";
 
     public DatabaseHelper(Context context) {
-        super(context, DATABASE_NAME , null, 1); //create database
+        super(context, DATABASE_NAME , null, 3); //create database
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase sqLiteDatabase) { //create table
         //create table
-        sqLiteDatabase.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT ,PLACENAME TEXT, REVIEW TEXT, RATING TEXT)" );
+        sqLiteDatabase.execSQL ("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT ,PLACENAME TEXT, REVIEW TEXT, RATING TEXT)" );
 
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         //doesn't create a new table if it already exists
@@ -52,10 +54,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getAlldData() {
+    public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cur = db.rawQuery("select * from "+ TABLE_NAME, null);
         return cur;
+    }
+
+    public Integer deleteData (String id) {
+        SQLiteDatabase db=this.getWritableDatabase();
+        return db.delete(TABLE_NAME, "ID = ?", new String[]{id});
     }
 
 

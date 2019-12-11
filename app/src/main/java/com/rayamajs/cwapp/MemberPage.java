@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,29 +18,35 @@ import java.util.Locale;
 
 public class MemberPage extends AppCompatActivity {
 
-    TextView outputText;
+    private TextView outputText;
+    private Button btnCamera;
+    private Button btnReview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_page);
+        btnCamera = (Button) findViewById(R.id.camera_btn);
+        btnReview = (Button) findViewById(R.id.review_btn);
+
+        btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), camera_page.class));
+            }
+        });
+        btnReview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), review.class));
+            }
+        });
 
     }
 
     public void btnLocation (View view) {
 
         startActivity(new Intent(this, MapsActivity.class));
-    }
-
-
-
-    public void btn_camera(View view) {
-
-        startActivity(new Intent(getApplicationContext(), camera_page.class));
-    }
-
-    public void btn_review(View view) {
-        startActivity(new Intent(getApplicationContext(), review.class));
     }
 
     public void btnSpeechToText(View view) {

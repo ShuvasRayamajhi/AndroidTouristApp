@@ -24,7 +24,7 @@ public class Sign_FormTest {
 
     private Sign_Form mActivity = null; //reference to activity
 
-    //Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(MemberPage.class.getName(),null,false);
+//    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(camera_page.class.getName(),null,false);
 
     @Before
     public void setUp() throws Exception {
@@ -38,7 +38,7 @@ public class Sign_FormTest {
         assertNotNull(view);
     }
 
-   // @Test
+//    @Test
 //    public void testLaunceSecondActivity()
 //    {
 //       assertNotNull(mActivity.findViewById(R.id.register_btn));
