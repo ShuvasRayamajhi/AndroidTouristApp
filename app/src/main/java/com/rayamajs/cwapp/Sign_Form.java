@@ -19,7 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Sign_Form extends AppCompatActivity {
 
-    private EditText emailTxt, passwordTxt, confirmTxt;
+    private EditText emailTxt;
+    private EditText passwordTxt;
+    private EditText confirmTxt;
     private Button buttonReg;
     private ProgressBar progressBar;
     private FirebaseAuth mAuth;

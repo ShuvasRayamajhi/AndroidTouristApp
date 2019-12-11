@@ -56,27 +56,18 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft= "5dp" />
 
-    <Button
-        android:onClick="textToSpeech"
-        android:text="Text To Speech"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:background="@drawable/rounded_button"
-        android:textSize="19sp"
-        android:layout_below="@+id/speech_btn"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft= "350dp" />
+
     <Button
         android:id="@+id/review_btn"
         android:onClick="btn_review"
         android:text="Notes"
         android:layout_width="300dp"
         android:layout_height="80dp"
-        android:layout_below="@+id/camera_btn"
+        android:layout_below="@+id/speech_btn"
         android:background="@drawable/rounded_button"
         android:textSize="19sp"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="350dp" />
 
 
 </RelativeLayout>

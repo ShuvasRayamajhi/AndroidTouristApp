@@ -65,3 +65,212 @@ public class ImageText extends AppCompatActivity {
 
 
     }
+    //actionbar menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+    //handle actionbar item clicks
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.addImage){
+            showImageImportDialog();
+        }
+        if (id == R.id.settings){
+            Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void showImageImportDialog() {
+        //items to display in dialog
+        String [] items = {" Camera", " Gallery"};
+        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        //set title
+        dialog.setTitle("Select Image");
+        dialog.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (which == 0){
+                    //camera option clicked
+                    if (!checkCameraPermission()){
+                        //camera permission not allowed request it
+                        requestCameraPermission();
+                    }
+                    else {
+                        //permission allowed, take pic
+                        pickCamera();
+                    }
+                }
+
+                if (which == 1){
+                    //gallery option clicked
+                    if(!checkStoragePermission()){
+                        //storage permission not allowed , request it
+                        requestStoragePermission();
+                    }
+                    else{
+                        //permission not allowed, take picture
+                        pickGallery();
+                    }
+
+
+                }
+
+            }
+        });
+        dialog.create().show();
+        //showing the dialog
+    }
+
+    private void pickGallery() {
+        //picking a image form the gallery
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("image/*");
+        startActivityForResult(intent, IMAGE_PICK_GALLERY_CODE);
+
+    }
+
+    private void pickCamera() {
+        //take an image and store into storage for better quality.
+        ContentValues values = new ContentValues();
+        values.put(MediaStore.Images.Media.TITLE, "NewPic");
+        values.put(MediaStore.Images.Media.DESCRIPTION, "Image To Text");
+        image_uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
+
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, image_uri);
+        startActivityForResult(cameraIntent, IMAGE_PICK_CAMERA_CODE);
+
+    }
+
+    private void requestStoragePermission() {
+        ActivityCompat.requestPermissions(this, storagePermission, STORAGE_REQUEST_CODE);
+
+    }
+
+    private boolean checkStoragePermission() {
+        boolean result = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
+        return result;
+    }
+
+    private void requestCameraPermission() {
+        ActivityCompat.requestPermissions(this, cameraPermission, CAMERA_REQUEST_CODE);
+    }
+
+    private boolean checkCameraPermission() {
+        /*check camera permission and return the result
+         * in order to get high quality image we have to save image to extrenal first
+         * before inserting to view image view that why storage perimssion will also be required*/
+        boolean result = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CAMERA) == (PackageManager.PERMISSION_GRANTED);
+        boolean result1 = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE) == (PackageManager.PERMISSION_GRANTED);
+        return result & result1;
+    }
+
+    //handle permission result
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case CAMERA_REQUEST_CODE:
+                if (grantResults.length >0){
+                    boolean cameraAccepted = grantResults[0] ==
+                            PackageManager.PERMISSION_GRANTED;
+                    boolean writeStorageAccepted = grantResults [0] ==
+                            PackageManager.PERMISSION_GRANTED;
+
+                    if (cameraAccepted && writeStorageAccepted){
+                        pickCamera();
+                    }
+
+                    else {
+                        Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                break;
+
+
+            case STORAGE_REQUEST_CODE:
+                if (grantResults.length >0){
+                    boolean writeStorageAccepted = grantResults [0] ==
+                            PackageManager.PERMISSION_GRANTED;
+
+                    if (writeStorageAccepted){
+                        pickGallery();
+                    }
+
+                    else {
+                        Toast.makeText(this, "permission denied", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                break;
+
+        }
+    }
+
+    //handle image result
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == IMAGE_PICK_GALLERY_CODE) {
+                //IMAGE FROM CAMERA READY TO CROP
+                CropImage.activity(data.getData())
+                        .setGuidelines(CropImageView.Guidelines.ON) //ENABLE IMAGE GUIDLINE
+                        .start(this);
+            }
+            if (requestCode == IMAGE_PICK_CAMERA_CODE) {
+                //IMAGE FROM CAMERA READY TO CROP
+                CropImage.activity(image_uri)
+                        .setGuidelines(CropImageView.Guidelines.ON) //ENABLE IMAGE GUIDLINE
+                        .start(this);
+            }
+        }
+        //get cropped images
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                Uri resultUri = result.getUri(); //get image uri
+                //set image to image view
+                mPreviewIv.setImageURI(resultUri);
+
+                //get drawable bitmap for text recognition
+                BitmapDrawable bitmapDrawable = (BitmapDrawable) mPreviewIv.getDrawable();
+                Bitmap bitmap = bitmapDrawable.getBitmap();
+
+                TextRecognizer recognizer = new TextRecognizer.Builder(getApplicationContext()).build();
+                if (!recognizer.isOperational()) {
+                    Toast.makeText(this, "ERROR", Toast.LENGTH_SHORT).show();
+                } else {
+                    Frame frame = new Frame.Builder().setBitmap(bitmap).build();
+                    SparseArray<TextBlock> items = recognizer.detect(frame);
+                    StringBuilder sb = new StringBuilder();
+                    //get text from sb unil there is no text
+                    for (int i = 0; i < items.size(); i++) {
+                        TextBlock myItem = items.valueAt(i);
+                        sb.append(myItem.getValue());
+                        sb.append("\n");
+                    }
+
+                    mResultEt.setText(sb.toString());
+
+                }
+
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                //if there is any error show it
+                Exception error = result.getError();
+                Toast.makeText(this, "" + error, Toast.LENGTH_SHORT).show();
+
+            }
+        }
+    }
+}
+

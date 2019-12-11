@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/tvMainText"
         android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:text="Member Page"
         android:gravity="left"
         android:backgroundTint="@color/colorPrimary"
@@ -43,16 +43,7 @@
         android:layout_marginLeft= "10dp"
         android:onClick="btnSpeechToText"
         />
-    <Button
-        android:onClick="textToSpeech"
-        android:text="Text To Speech"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/rounded_button"
-        android:layout_below="@+id/camera_btn"
-        android:textSize="19sp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft= "10dp" />
+
     <Button
         android:id="@+id/camera_btn"
         android:text="Camera"
@@ -71,7 +62,7 @@
         android:background="@drawable/rounded_button"
         android:layout_below="@+id/camera_btn"
         android:textSize="19sp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="20dp"
         android:layout_marginLeft= "10dp" />
 
 

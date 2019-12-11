@@ -71,7 +71,7 @@ public class review extends AppCompatActivity {
                     buffer.append("ID: "+ cur.getString(0)+ "\n");
                     buffer.append("Place Name: "+ cur.getString(1)+ "\n");
                     buffer.append("Review: "+ cur.getString(2)+ "\n");
-                    buffer.append("Rating: "+ cur.getString(3)+ "\n");
+                    buffer.append("Rating: "+ cur.getString(3)+ "\n\n");
 
                 }
                 showMessage("Reviews:", buffer.toString()); //display data on the xml
@@ -87,7 +87,7 @@ public class review extends AppCompatActivity {
                   Toast.makeText(review.this, "Deleted data", Toast.LENGTH_SHORT).show();
               }
               else {
-                  Toast.makeText(review.this, "Deleted data", Toast.LENGTH_SHORT).show();
+                  Toast.makeText(review.this, "Can't deleted data", Toast.LENGTH_SHORT).show();
               }
             }
         });

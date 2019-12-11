@@ -17,8 +17,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class MemberPage extends AppCompatActivity {
-
-    private TextView outputText;
+    
     private Button btnCamera;
     private Button btnReview;
 
@@ -49,11 +48,11 @@ public class MemberPage extends AppCompatActivity {
         startActivity(new Intent(this, MapsActivity.class));
     }
 
-    public void btnSpeechToText(View view) {
-        startActivity(new Intent(getApplicationContext(), SpeechToText.class));
+    public void btn_review(View view) {
+        startActivity(new Intent(getApplicationContext(), com.rayamajs.cwapp.review.class));
     }
 
-    public void textToSpeech(View view) {
+    public void btnSpeechToText(View view) {
         startActivity(new Intent(getApplicationContext(), com.rayamajs.cwapp.TextToSpeech.class));
     }
 }
