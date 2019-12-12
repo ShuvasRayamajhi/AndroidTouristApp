@@ -1,5 +1,5 @@
 package com.rayamajs.cwapp;
-
+/*use google maps api to display users current location*/
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
@@ -149,7 +149,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     }
 
-
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -174,8 +173,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         }
-
-
     }
 
     @Override

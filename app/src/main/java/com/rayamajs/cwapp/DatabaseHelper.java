@@ -45,9 +45,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_4, rating);
 
         long success = db.insert(TABLE_NAME, null, contentValues); //insert the values that were put
-
         if (success == -1){
-            return false;
+            return false;  //unsuccessful in inserting data.
         }
         else {
             return true;
@@ -56,13 +55,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor getAllData() {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cur = db.rawQuery("select * from "+ TABLE_NAME, null);
+        Cursor cur = db.rawQuery("select * from "+ TABLE_NAME, null); //select all from the database
         return cur;
     }
 
     public Integer deleteData (String id) {
         SQLiteDatabase db=this.getWritableDatabase();
-        return db.delete(TABLE_NAME, "ID = ?", new String[]{id});
+        return db.delete(TABLE_NAME, "ID = ?", new String[]{id}); //remove data based on the id number
     }
 
 

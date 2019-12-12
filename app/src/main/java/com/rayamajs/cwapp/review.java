@@ -1,4 +1,7 @@
 package com.rayamajs.cwapp;
+/*this is where users can add notes/reviews and save them on the database, retrieve the data and delete it too
+also allows users to use their seech to take notes
+created by rayamajs*/
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,25 +59,24 @@ public class review extends AppCompatActivity {
                     }
             }
         });
-        //add functionality to view button
+        //add functionality to view all button
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Cursor cur =  myDb.getAllData();
-
                 if(cur.getCount()==0){
                    showMessage("Error", "Data not found"); //if there is no data existing in the database.
                 }
                 StringBuffer buffer = new StringBuffer();
                 while (cur.moveToNext()){ //keep looping until all data is found
-
+                    //display data for each row
                     buffer.append("ID: "+ cur.getString(0)+ "\n");
-                    buffer.append("Place Name: "+ cur.getString(1)+ "\n");
-                    buffer.append("Review: "+ cur.getString(2)+ "\n");
+                    buffer.append("Name: "+ cur.getString(1)+ "\n");
+                    buffer.append("Detail: "+ cur.getString(2)+ "\n");
                     buffer.append("Rating: "+ cur.getString(3)+ "\n\n");
 
                 }
-                showMessage("Reviews:", buffer.toString()); //display data on the xml
+                showMessage("Data:", buffer.toString()); //display data on the xml
 
             }
         });
@@ -82,7 +84,7 @@ public class review extends AppCompatActivity {
         btnDelete.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-              Integer deletedRow = myDb.deleteData(txtID.getText().toString());
+              Integer deletedRow = myDb.deleteData(txtID.getText().toString()); //delete data  based on the id user enters
               if(deletedRow>0) {
                   Toast.makeText(review.this, "Deleted data", Toast.LENGTH_SHORT).show();
               }
@@ -93,35 +95,36 @@ public class review extends AppCompatActivity {
         });
 
     }
+    //speech to text
     public void btnSpeech(View view) {
 
-        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH); //new internet to recognise speech
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault()); //getting default locale
         intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
                 "Say Something");
         try {
             startActivityForResult(intent, 1);
         } catch (ActivityNotFoundException e){
-            Toast.makeText(this, e.getMessage(),Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, e.getMessage(),Toast.LENGTH_SHORT).show(); //alert users
         }
 
     }
+    //when it is finished
     @Override
     protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         switch (requestCode) {
             case 1:
                 if (resultCode==RESULT_OK && null!= data) {
                     ArrayList<String> result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    txtReview.setText(result.get(0));
+                    txtReview.setText(result.get(0)); //set it to the edit text
                 }
                 break;
         }
 
     }
-    public void showMessage (String title, String Message) {
+    public void showMessage (String title, String Message) { //show the database data to user
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
         builder.setTitle(title);

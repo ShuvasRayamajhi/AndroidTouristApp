@@ -2,16 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:padding="20dp"
     android:background="@drawable/register_background"
-    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".review">
-
+    <TextView
+        android:id="@+id/tvMainText"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Member Page"
+        android:gravity="left"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="#161515"
+        android:layout_marginTop="1dp"
+        />
 
     <EditText
         android:layout_width="280dp"
         android:layout_height="wrap_content"
+        android:gravity="left"
         android:id="@+id/editPlaceName"
         android:layout_marginTop="15dp"
         android:ems="10"
@@ -21,8 +31,8 @@
         />
     <EditText
         android:id="@+id/txt_output"
-        android:layout_width="360dp"
-        android:layout_height="140dp"
+        android:layout_width="285dp"
+        android:layout_height="100dp"
         android:hint="Review. Say something."
         android:layout_marginTop="65dp"
         android:lines="8"
@@ -32,28 +42,25 @@
         android:gravity="center"
         android:textSize="20dp"
         android:background="@drawable/text_background"
-
         />
 
     <Button
         android:id="@+id/speech_btn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
         android:background="@drawable/rounded_button"
-        android:text="Open Mic"
+        android:text="Mic"
         android:textSize="19sp"
-        android:layout_marginTop="210dp"
-        android:layout_marginLeft= "260dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginLeft= "285dp"
         android:onClick="btnSpeech"
         />
-
-
 
     <EditText
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:id="@+id/editRating"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="160dp"
         android:ems="10"
         android:textSize="20sp"
         android:inputType="text"
@@ -65,7 +72,7 @@
         android:id="@+id/btn_insert"
         android:layout_below="@+id/editRating"
         android:text="INSERT"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
         android:textSize="18sp"
         android:background="@drawable/rounded_button"
         />
@@ -76,17 +83,24 @@
         android:id="@+id/btn_view"
         android:layout_below="@+id/editRating"
         android:text="VIEW"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
         android:layout_toRightOf="@id/btn_insert"
         android:layout_marginLeft="15dp"
         android:textSize="18sp"
         android:background="@drawable/rounded_button"
         />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      >
+
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_id"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="310dp"
         android:ems="10"
         android:textSize="20sp"
         android:inputType="text"
@@ -98,17 +112,13 @@
         android:id="@+id/btn_delete"
         android:layout_below="@+id/editRating"
         android:text="DELETE"
-        android:layout_marginTop="110dp"
-        android:layout_marginLeft="1dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginLeft="420dp"
         android:textSize="18sp"
         android:background="@drawable/rounded_button"
         />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Accessibility Features"
-        />
 
+  </LinearLayout>
 
 
 </RelativeLayout>

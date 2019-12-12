@@ -20,12 +20,14 @@ import static org.junit.Assert.*;
 public class MemberPageTest {
 
     @Rule
-    public ActivityTestRule<MemberPage> mActivityTestRule = new ActivityTestRule<MemberPage>(MemberPage.class);
-
+    public ActivityTestRule<MemberPage> mActivityTestRule = new ActivityTestRule<MemberPage>(MemberPage.class); //declare the main activity you want to set
     private MemberPage mActivity = null;
 
+    //declare the main activities inside main activity
     Instrumentation.ActivityMonitor monitor2 = getInstrumentation().addMonitor(review.class.getName(),null,false);
-
+    Instrumentation.ActivityMonitor monitor3 = getInstrumentation().addMonitor(MapsActivity.class.getName(),null,false);
+    Instrumentation.ActivityMonitor monitor4 = getInstrumentation().addMonitor(TextToSpeech.class.getName(),null,false);
+    Instrumentation.ActivityMonitor monitor5 = getInstrumentation().addMonitor(ImageText.class.getName(),null,false);
     @Before
     public void setUp() throws Exception {
         mActivity = mActivityTestRule.getActivity();
@@ -35,9 +37,7 @@ public class MemberPageTest {
     public void testLaunch()
     {
         View view = mActivity.findViewById(R.id.tvMainText);
-
         assertNotNull(view);
-
     }
 
     @Test
@@ -48,6 +48,34 @@ public class MemberPageTest {
         Activity noteActivity = getInstrumentation().waitForMonitorWithTimeout(monitor2, 5000);
         assertNotNull(noteActivity);
         noteActivity.finish();
+    }
+
+    @Test
+    public void testLaunchMaps()
+    {
+        assertNotNull(mActivity.findViewById(R.id.location_btn));
+        onView(withId(R.id.location_btn)).perform(click());
+        Activity mapsActivity = getInstrumentation().waitForMonitorWithTimeout(monitor3, 5000);
+        assertNotNull(mapsActivity);
+        mapsActivity.finish();
+    }
+
+    @Test
+    public void testLaunchToSpeech()
+    {
+        assertNotNull(mActivity.findViewById(R.id.speech_btn));
+        onView(withId(R.id.speech_btn)).perform(click());
+        Activity speechActivity = getInstrumentation().waitForMonitorWithTimeout(monitor4, 5000);
+        assertNotNull(speechActivity);
+        speechActivity.finish();
+    }
+    public void testLaunchImage()
+    {
+        assertNotNull(mActivity.findViewById(R.id.btn_image));
+        onView(withId(R.id.btn_image)).perform(click());
+        Activity imageActivity = getInstrumentation().waitForMonitorWithTimeout(monitor5, 5000);
+        assertNotNull(imageActivity);
+        imageActivity.finish();
     }
 
     @After

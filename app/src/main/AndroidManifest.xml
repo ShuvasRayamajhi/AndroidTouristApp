@@ -26,14 +26,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MemberPage">
+        <activity android:name=".Log_Form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Log_Form" />
+        <activity android:name=".MemberPage" />
         <activity android:name=".TextToSpeech" />
         <activity android:name=".review" />
         <activity android:name=".ImageText" />

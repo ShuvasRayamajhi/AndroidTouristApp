@@ -20,37 +20,24 @@ import static org.junit.Assert.*;
 public class Sign_FormTest {
 
     @Rule //create test rule
-    public ActivityTestRule<Sign_Form> mActivityTestRule = new ActivityTestRule<Sign_Form>(Sign_Form.class);
+    public ActivityTestRule<Sign_Form> mActivityTestRule = new ActivityTestRule<Sign_Form>(Sign_Form.class); //declare class name
 
     private Sign_Form mActivity = null; //reference to activity
 
-//    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(camera_page.class.getName(),null,false);
-
     @Before
-    public void setUp() throws Exception {
+    public void setUp() throws Exception { //before test launch setUp will be executed,
         mActivity = mActivityTestRule.getActivity(); //activity = get activity
     }
 
     @Test
-    public void testLaunch()  //before test launch setUp will be executed, after test launch teardown
+    public void testLaunch()   //the test to check the launch of register form
     {
-        View view = mActivity.findViewById(R.id.tvMainText); //find view by id
+        View view = mActivity.findViewById(R.id.tvMainText); //find view by id of the text view on the register page
         assertNotNull(view);
     }
 
-//    @Test
-//    public void testLaunceSecondActivity()
-//    {
-//       assertNotNull(mActivity.findViewById(R.id.register_btn));
-//       onView(withId(R.id.register_btn)).perform(click());
-//      Activity secondActivity = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
-//      assertNotNull(secondActivity);
-//      secondActivity.finish();
-//
-//    }
-
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() throws Exception { //after test launch this will be executed, tear down
         mActivity = null; //in the tear down nullified activity
     }
 }
