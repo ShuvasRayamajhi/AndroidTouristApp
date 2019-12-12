@@ -56,12 +56,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LatLng latLng;
     private boolean isPermission;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-
         if (requestSinglePermission()) {
 
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -118,7 +116,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         dialog.show(); //enabling dialog
 
     }
-
     private boolean isLocationEnabled() {
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE); //initialised 2nd location manager
         return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) || //passing gps provider and network provider
@@ -146,7 +143,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     }
                 }).check();
         return isPermission;
-
     }
 
     /**
@@ -170,7 +166,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             //above, added marker, position which is current location is passed and set title.
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14F));
             //above,  zoomed 14f is passed, show current location.
-
 
         }
     }
@@ -199,11 +194,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Toast.makeText(this, "Your location can not be detected. ", Toast.LENGTH_SHORT).show();
 
         }
-
     }
 
     private void startLocationUpdate() {
-
         mLocationRequest = LocationRequest.create() //requesting location
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)  //set high accuracy priority
                 .setInterval(UPDATE_INTERVAL) //use interval declared above
@@ -221,15 +214,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //location services listener
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,
                 mLocationRequest,this);
-
-
     }
-
     @Override
     public void onConnectionSuspended(int i) {
         Toast.makeText(this, "Connection suspended ", Toast.LENGTH_SHORT).show();
-
-
     }
 
     @Override
@@ -237,7 +225,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Toast.makeText(this, "Connection failed ", Toast.LENGTH_SHORT).show();
 
     }
-
     @Override
     public void onLocationChanged(Location location) {
 
@@ -256,11 +243,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(MapsActivity.this, "Location Saved", Toast.LENGTH_SHORT);
+                    Toast.makeText(MapsActivity.this, "Location Saved", Toast.LENGTH_SHORT); //when location is saved on the database
                 }
                 else {
                     Toast.makeText(MapsActivity.this, "Location failed to save", Toast.LENGTH_SHORT);
-
                 }
             }
         });
@@ -281,7 +267,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mGoogleApiClient.connect();
         }
     }
-
     @Override
     protected void onStop() {
         super.onStop();
@@ -291,5 +276,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
     }
-
 }

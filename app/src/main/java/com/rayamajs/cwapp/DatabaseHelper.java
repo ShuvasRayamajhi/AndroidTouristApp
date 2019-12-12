@@ -1,5 +1,6 @@
 package com.rayamajs.cwapp;
-
+/*creates datbase, tables, column, inserts, deletes data,
+interacts with the review class*/
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -34,7 +35,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //doesn't create a new table if it already exists
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(sqLiteDatabase);
-
     }
 
     public boolean insertData(String placename, String review, String rating) {

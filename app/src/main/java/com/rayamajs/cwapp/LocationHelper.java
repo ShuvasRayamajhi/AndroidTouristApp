@@ -1,5 +1,5 @@
 package com.rayamajs.cwapp;
-
+//used to properly implement google maps api by getting longitude and latitude
 public class LocationHelper {
 
     private double Longitude;
@@ -9,7 +9,6 @@ public class LocationHelper {
         Longitude = longitude;
         Latitude = latitude;
     }
-
     public double getLongitude() {
         return Longitude;
     }

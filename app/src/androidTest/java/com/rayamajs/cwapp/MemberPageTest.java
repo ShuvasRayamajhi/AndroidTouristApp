@@ -23,8 +23,8 @@ public class MemberPageTest {
     public ActivityTestRule<MemberPage> mActivityTestRule = new ActivityTestRule<MemberPage>(MemberPage.class); //declare the main activity you want to set
     private MemberPage mActivity = null;
 
-    //declare the main activities inside main activity
-    Instrumentation.ActivityMonitor monitor2 = getInstrumentation().addMonitor(review.class.getName(),null,false);
+    //declare the main activities inside  activity
+    Instrumentation.ActivityMonitor monitor2 = getInstrumentation().addMonitor(review.class.getName(),null,false); //creating a monitor
     Instrumentation.ActivityMonitor monitor3 = getInstrumentation().addMonitor(MapsActivity.class.getName(),null,false);
     Instrumentation.ActivityMonitor monitor4 = getInstrumentation().addMonitor(TextToSpeech.class.getName(),null,false);
     Instrumentation.ActivityMonitor monitor5 = getInstrumentation().addMonitor(ImageText.class.getName(),null,false);
@@ -36,16 +36,16 @@ public class MemberPageTest {
     @Test
     public void testLaunch()
     {
-        View view = mActivity.findViewById(R.id.tvMainText);
+        View view = mActivity.findViewById(R.id.tvMainText);//check the main activity works
         assertNotNull(view);
     }
 
     @Test
     public void testLaunceNotes()
     {
-        assertNotNull(mActivity.findViewById(R.id.review_btn));
-        onView(withId(R.id.review_btn)).perform(click());
-        Activity noteActivity = getInstrumentation().waitForMonitorWithTimeout(monitor2, 5000);
+        assertNotNull(mActivity.findViewById(R.id.review_btn)); //check the main activity opens
+        onView(withId(R.id.review_btn)).perform(click()); //use espresso method and click the button
+        Activity noteActivity = getInstrumentation().waitForMonitorWithTimeout(monitor2, 5000); //use monitor to ensure that the activity opened
         assertNotNull(noteActivity);
         noteActivity.finish();
     }
