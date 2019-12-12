@@ -24,7 +24,6 @@ public class MemberPageTest {
 
     private MemberPage mActivity = null;
 
-    Instrumentation.ActivityMonitor monitor = getInstrumentation().addMonitor(camera_page.class.getName(),null,false);
     Instrumentation.ActivityMonitor monitor2 = getInstrumentation().addMonitor(review.class.getName(),null,false);
 
     @Before
@@ -50,18 +49,6 @@ public class MemberPageTest {
         assertNotNull(noteActivity);
         noteActivity.finish();
     }
-
-    @Test
-    public void testLaunchCamera()
-    {
-        assertNotNull(mActivity.findViewById(R.id.camera_btn));
-        onView(withId(R.id.camera_btn)).perform(click());
-        Activity cameraActivity = getInstrumentation().waitForMonitorWithTimeout(monitor, 5000);
-        assertNotNull(cameraActivity);
-        cameraActivity.finish();
-    }
-
-
 
     @After
     public void tearDown() throws Exception {

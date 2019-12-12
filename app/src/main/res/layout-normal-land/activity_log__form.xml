@@ -18,7 +18,7 @@
 
 
     <ImageView
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/log_icon"
         android:padding="10dp"
@@ -35,7 +35,7 @@
         <EditText
             android:id="@+id/email_txt"
             android:paddingTop="21dp"
-            android:layout_width="300dp"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:hint="Email"
             android:inputType="text"
@@ -44,7 +44,7 @@
         <EditText
             android:id="@+id/password_txt"
             android:paddingTop="10dp"
-            android:layout_width="300dp"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:hint="Password"
             android:inputType="textPassword"
@@ -70,7 +70,7 @@
         >
         <Button
             android:id="@+id/log_btn"
-            android:layout_width="140dp"
+            android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_margin="3dp"
             android:background="@drawable/rounded_button"

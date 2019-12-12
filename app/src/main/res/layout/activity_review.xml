@@ -13,80 +13,18 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:id="@+id/editPlaceName"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:ems="10"
         android:textSize="20sp"
         android:inputType="text"
         android:hint= "Name: "
         />
-
-
-    <EditText
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/editRating"
-        android:layout_marginTop="280dp"
-        android:ems="10"
-        android:textSize="20sp"
-        android:inputType="text"
-        android:hint= "Rating: "
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_insert"
-        android:layout_below="@+id/editRating"
-        android:text="INSERT"
-        android:layout_marginTop="15dp"
-        android:textSize="18sp"
-        android:background="@drawable/rounded_button"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_view"
-        android:layout_below="@+id/editRating"
-        android:text="VIEW"
-        android:layout_marginTop="15dp"
-        android:layout_toRightOf="@id/btn_insert"
-        android:layout_marginLeft="15dp"
-        android:textSize="18sp"
-        android:background="@drawable/rounded_button"
-        />
-    <EditText
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/edit_id"
-        android:layout_marginTop="410dp"
-        android:ems="10"
-        android:textSize="20sp"
-        android:inputType="text"
-        android:hint= "ID to delete"
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_delete"
-        android:layout_below="@+id/editRating"
-        android:text="DELETE"
-        android:layout_marginTop="130dp"
-        android:layout_marginLeft="1dp"
-        android:textSize="18sp"
-        android:background="@drawable/rounded_button"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Accessibility Features"
-        />
-
     <EditText
         android:id="@+id/txt_output"
-        android:layout_width="360dp"
-        android:layout_height="140dp"
-        android:hint="Say something."
-        android:layout_marginTop="100dp"
+        android:layout_width="270dp"
+        android:layout_height="100dp"
+        android:hint="Review. Say something."
+        android:layout_marginTop="65dp"
         android:lines="8"
         android:minLines="6"
         android:maxLines="10"
@@ -99,15 +37,76 @@
 
     <Button
         android:id="@+id/speech_btn"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="90dp"
+        android:layout_height="50dp"
         android:background="@drawable/rounded_button"
         android:text="Open Mic"
-        android:textSize="19sp"
-        android:layout_marginTop="245dp"
-        android:layout_marginLeft= "260dp"
+        android:textSize="8sp"
+        android:layout_marginTop="165dp"
+        android:layout_marginLeft= "210dp"
         android:onClick="btnSpeech"
         />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editRating"
+        android:layout_marginTop="180dp"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:hint= "Rating: "
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_insert"
+        android:layout_below="@+id/editRating"
+        android:text="INSERT"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_button"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_view"
+        android:layout_below="@+id/editRating"
+        android:text="VIEW"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/btn_insert"
+        android:layout_marginLeft="15dp"
+        android:textSize="18sp"
+        android:background="@drawable/rounded_button"
+        />
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_id"
+        android:layout_marginTop="300dp"
+        android:ems="10"
+        android:textSize="20sp"
+        android:inputType="text"
+        android:hint= "ID to delete"
+        />
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:id="@+id/btn_delete"
+        android:layout_below="@+id/editRating"
+        android:text="DELETE"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="1dp"
+        android:textSize="11sp"
+        android:background="@drawable/rounded_button"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Accessibility Features"
+        />
+
 
 
 </RelativeLayout>

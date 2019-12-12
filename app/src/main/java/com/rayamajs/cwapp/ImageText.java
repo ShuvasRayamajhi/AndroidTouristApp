@@ -79,9 +79,6 @@ public class ImageText extends AppCompatActivity {
         if (id == R.id.addImage){
             showImageImportDialog();
         }
-        if (id == R.id.settings){
-            Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
-        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -105,7 +102,6 @@ public class ImageText extends AppCompatActivity {
                         pickCamera();
                     }
                 }
-
                 if (which == 1){
                     //gallery option clicked
                     if(!checkStoragePermission()){
@@ -116,16 +112,12 @@ public class ImageText extends AppCompatActivity {
                         //permission not allowed, take picture
                         pickGallery();
                     }
-
-
                 }
-
             }
         });
         dialog.create().show();
         //showing the dialog
     }
-
     private void pickGallery() {
         //picking a image form the gallery
         Intent intent = new Intent(Intent.ACTION_PICK);
@@ -194,7 +186,6 @@ public class ImageText extends AppCompatActivity {
                 }
                 break;
 
-
             case STORAGE_REQUEST_CODE:
                 if (grantResults.length >0){
                     boolean writeStorageAccepted = grantResults [0] ==
@@ -212,10 +203,7 @@ public class ImageText extends AppCompatActivity {
 
         }
     }
-
     //handle image result
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

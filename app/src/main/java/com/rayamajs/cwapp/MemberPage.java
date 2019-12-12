@@ -17,23 +17,16 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 public class MemberPage extends AppCompatActivity {
-    
-    private Button btnCamera;
+
     private Button btnReview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_page);
-        btnCamera = (Button) findViewById(R.id.camera_btn);
         btnReview = (Button) findViewById(R.id.review_btn);
 
-        btnCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), camera_page.class));
-            }
-        });
+
         btnReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,5 +47,10 @@ public class MemberPage extends AppCompatActivity {
 
     public void btnSpeechToText(View view) {
         startActivity(new Intent(getApplicationContext(), com.rayamajs.cwapp.TextToSpeech.class));
+    }
+
+
+    public void btnImage(View view) {
+        startActivity(new Intent(getApplicationContext(), com.rayamajs.cwapp.ImageText.class));
     }
 }
